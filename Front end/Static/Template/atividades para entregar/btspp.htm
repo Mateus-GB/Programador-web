@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <link rel="stylesheet" href="/Static/static/Css/btsp.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Controle de Estoque</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px auto;
+        max-width: 600px;
+        background-color: #f8f8f8;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        background-color: #fff;
+        margin-bottom: 6px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .remover {
+        background: red;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      textarea {
+        width: 100%;
+        margin-top: 20px;
+        height: 100px;
+        font-size: 14px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📦 Controle de Estoque</h1>
+    <form id="form-estoque">
+      <input
+        type="text"
+        id="input-ingrediente"
+        placeholder="Digite um ingrediente"
+        required
+      />
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-ingredientes"></ul>
+
+    <label for="resultado">Ingredientes cadastrados:</label>
+
+    <textarea
+      id="resultado"
+      readonly
+      placeholder="A lista aparecerá aqui..."
+    ></textarea>
+    <script>
+      const form = document.getElementById("form-estoque");
+      const input = document.getElementById("input-ingrediente");
+      const lista = document.getElementById("lista-ingredientes");
+      const resultado = document.getElementById("resultado");
+      const ingredientes = [];
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const valor = input.value.trim();
+        if (valor !== "") {
+          ingredientes.push(valor);
+          atualizarLista();
+          input.value = "";
+        }
+      });
+      function atualizarLista() {
+        lista.innerHTML = "";
+        ingredientes.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          const btn = document.createElement("button");
+          btn.textContent = "Remover";
+          btn.className = "remover";
+          btn.onclick = () => {
+            ingredientes.splice(index, 1);
+            atualizarLista();
+          };
+          li.appendChild(btn);
+          lista.appendChild(li);
+        });
+        resultado.value = ingredientes.join(", ");
+      }
+    </script>
+  </body>
+</html>

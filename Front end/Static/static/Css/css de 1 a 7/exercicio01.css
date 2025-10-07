@@ -1,0 +1,33 @@
+/* color */
+body {font-family: Arial, Helvetica, sans-serif;
+color: #3D3D3D;}
+
+p {	    
+     color: #3D3D3D;	     
+	 font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {         
+	
+	background-color: #E1EDF2;
+
+}
+
+h2 {          
+	
+	font-family: sans-serif;
+	border-bottom: 2px solid black;
+
+}
+
+figure {text-align: center;
+
+ 	background-color: whitesmoke;
+	border: solid lightgrey;
+}
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Exemplo01</title> 
+
+
+    <head>
+        <body>
+          <form>
+
+   <input type="number" id="n1">
+   <input type="number" id="n2">
+</form>
+
+<button onclick="somar()">somar</button>
+
+<p id="resultado"></p>
+
+<script>
+
+    function somar() {
+    let n1 = parseInt(document.getElementById("n1").value);
+ let n2 = parseInt(document.getElementById("n2").value);
+  document.getElementById("resultado").innerHTML = "resultado: " + (n1 + n2);
+}
+</script>
+
+
+
+        </body>
+        <html>
+    </head>

@@ -1,0 +1,34 @@
+/* color */
+
+body {font family: "helvetica", "Lucida Grande", sans serif; }
+
+p {	    
+	
+     color: blue;	     
+     background-color:rgb(42, 165, 93);
+	 font-family: monospace;
+	 text-align: right;
+	 line-height: 3;
+	 letter-spacing: 3;
+	 word-spacing: 5;
+	 text-indent:30;
+}
+
+h1 {         
+	color: red;
+	font-family: serif;
+	background-image: url("C:\Users\mateus.zarembski\JovemProgramadorWeb\Front end\Static\static\img\home-background.png");
+
+}
+
+h2 {          
+	background-color: #f2eded;
+	font-family: sans-serif;
+
+}
+
+
+
+
+
+
